@@ -1,3 +1,13 @@
-.first-container {
-  height: calc(100vh - 77.7px);
+.main-landing {
+  background-image: url('/assets/svg/Waimakariri.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.primary-title {
+  color: #6759ae;
+}
+.site-credit-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
