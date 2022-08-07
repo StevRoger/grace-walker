@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Inter:wght@400;600;700&display=swap');
-//@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -11,4 +10,10 @@ html, body {
 body {
   margin: 0;
   font-family: 'Inter', 'Battambang', Roboto, "Helvetica Neue", cursive, sans-serif;
+}
+
+.main-landing {
+  background-image: url('/assets/svg/Waimakariri.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
