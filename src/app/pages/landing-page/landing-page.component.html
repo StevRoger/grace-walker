@@ -13,8 +13,12 @@
             <h1 class="fw-bold display-5">To&nbsp;<span class="primary-title">Meta</span>&nbsp;platform's tools</h1>
             <p class="font-normal mb-7">We are providing variety of useful MMO's tools to help Khmer people reach their
               best potential in MMO fields.</p>
-            <button mat-flat-button color="primary" class="py-1 px-7" (click)="signInWithFB()">Login with Facebook
-            </button>
+            <div class="d-flex">
+              <button mat-flat-button color="primary" class="py-1 px-7 mr-2" (click)="signInWithFB()">Login with Facebook
+              </button>
+              <button mat-flat-button class="py-1 px-7 google-btn" (click)="signInWithGoogle()">Login with Google
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-12 d-none d-md-block col-md-6"></div>

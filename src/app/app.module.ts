@@ -5,7 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PageModule} from "./pages/page.module";
-import {FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule
+} from "angularx-social-login";
 
 @NgModule({
   declarations: [
@@ -18,18 +23,19 @@ import {FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 
     PageModule,
     SocialLoginModule,
   ],
+  /** Secret app: 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 */
   providers: [
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
         autoLogin: false,
         providers: [
-          // {
-          //   id: GoogleLoginProvider.PROVIDER_ID,
-          //   provider: new GoogleLoginProvider(
-          //     'clientId'
-          //   )
-          // },
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '328001884889-1q1e6v6facjbln6smvojgrnaclu6cjeh.apps.googleusercontent.com'
+            ),
+          },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
             provider: new FacebookLoginProvider('1432103473956063')

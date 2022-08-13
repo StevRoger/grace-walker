@@ -16,11 +16,7 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        'sans': ['Proxima Nova', ...defaultTheme.fontFamily.sans],
-      },
-    },
+    extend: {},
   },
 
 }
