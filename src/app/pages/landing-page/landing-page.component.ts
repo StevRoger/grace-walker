@@ -8,6 +8,7 @@ import {
 } from "angularx-social-login";
 import {MatDialog} from "@angular/material/dialog";
 import {Router, RouterLink} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-landing-page',
@@ -18,26 +19,32 @@ export class LandingPageComponent implements OnInit {
 
   // @ts-ignore
   @ViewChild('siteCreditDialog') siteCreditDialog: TemplateRef<any>;
-  public user: SocialUser | undefined;
+  public user: SocialUser | any;
   public GoogleLoginProvider = GoogleLoginProvider;
 
   constructor(
     private readonly _authService: SocialAuthService,
     public dialog: MatDialog,
-    private _Router: Router
+    private _router: Router,
+    private _matSnackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
-    this._authService.authState.subscribe((user) => {
-      this.user = user;
-      if (this.user.id) {
-        localStorage.setItem('USER', JSON.stringify(user));
-        this._Router.navigateByUrl('home').then();
-      }
-      console.log('subscribed user =>', this.user);
-    }, error => {
-      console.log(error);
-    });
+    // this._authService.authState.subscribe((user) => {
+    //   this.user = user;
+    //   if (this.user.provider) {
+    //     localStorage.setItem('GOOGLE_USER', JSON.stringify(user));
+    //     this._router.navigateByUrl('home').then();
+    //   } else if (this.user['first_name']){
+    //     localStorage.setItem('FACEBOOK_USER', JSON.stringify(user));
+    //     this._router.navigateByUrl('home').then();
+    //   } else {
+    //     this._matSnackBar.open('Something went wrong! Please try again!');
+    //   }
+    // }, error => {
+    //   console.log(error);
+    //   this._matSnackBar.open('Login failed! Please try again!');
+    // });
   }
 
   openCredit(): void {
@@ -46,15 +53,15 @@ export class LandingPageComponent implements OnInit {
 
   signInWithFB(): void {
     this._authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((user) => {
-      // Do something after login is successful.
-      console.log('Facebook user', user);
+      localStorage.setItem('FACEBOOK_USER', JSON.stringify(user));
+      this._router.navigateByUrl('home').then();
     });
   }
 
   signInWithGoogle(): void {
     this._authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user) => {
-      // Do something after login is successful.
-      console.log('Google user:', user);
+      localStorage.setItem('GOOGLE_USER', JSON.stringify(user));
+      this._router.navigateByUrl('home').then();
     });
   }
 

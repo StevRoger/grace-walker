@@ -5,7 +5,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {SocialLoginModule} from "angularx-social-login";
 import {MatDialogModule} from '@angular/material/dialog';
-import { HomePageComponent } from './home-page/home-page.component';
+import {HomePageComponent} from './home-page/home-page.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatTooltipModule,
     SocialLoginModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: []
