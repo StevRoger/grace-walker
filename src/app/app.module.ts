@@ -11,14 +11,17 @@ import {
 } from "angularx-social-login";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import {PageModule} from "./pages/page.module";
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     CommonModule,
     RouterModule,
     MatTooltipModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   /** Secret app: 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 */
   providers: [
@@ -43,6 +48,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
             provider: new GoogleLoginProvider(
               '328001884889-1q1e6v6facjbln6smvojgrnaclu6cjeh.apps.googleusercontent.com'
             ),
+            scope: 'email',
+            plugin_name: 'Seagate Web'
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,

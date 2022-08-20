@@ -23,7 +23,9 @@
       </div>
     </div>
     <div class="col-12 justify-content-center flex">
-      <button mat-flat-button class="py-1 px-7 bg-purple-500 mr-2 text-white" (click)="openLinks()">Open Links
+      <button mat-flat-button color="primary" [disabled]="!listGroupIds" class="py-1 px-7 mr-2" (click)="openLinks()">Open Links
+      </button>
+      <button mat-flat-button *ngIf="listGroupIds" class="py-1 px-7 mr-2" (click)="listGroupIds = ''">Clear
       </button>
     </div>
   </div>
