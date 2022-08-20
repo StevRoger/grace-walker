@@ -7,8 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   FacebookLoginProvider,
   GoogleLoginProvider,
-  SocialAuthServiceConfig,
+  SocialAuthServiceConfig, SocialLoginModule,
 } from "angularx-social-login";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {PageModule} from "./pages/page.module";
+import {CommonModule} from "@angular/common";
+import {RouterModule} from "@angular/router";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SocialLoginModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    CommonModule,
+    RouterModule,
+    MatTooltipModule,
   ],
   /** Secret app: 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 */
   providers: [
