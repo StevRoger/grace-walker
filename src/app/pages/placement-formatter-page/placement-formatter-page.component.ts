@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-placement-formatter-page',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlacementFormatterPageComponent implements OnInit {
 
-  constructor() { }
+  public listPlacements: string = '';
+  // @ts-ignore
+  @ViewChild('getPlacementGuideDialog') getPlacementGuideDialog: TemplateRef<any>;
+
+  constructor(
+    public dialog: MatDialog,
+  ) { }
 
   ngOnInit(): void {
   }
 
+  openGuide(): void {
+    this.dialog.open(this.getPlacementGuideDialog, {autoFocus: false});
+  }
+
+  onFormatPlacement(): void {
+    const formattedPlacementArray: string [] = this.listPlacements.split('\n');
+    console.log('formattedPlacementArray', formattedPlacementArray);
+  }
 }

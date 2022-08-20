@@ -1,1 +1,93 @@
-<p>placement-formatter-page works!</p>
+<div class="container my-20">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="fw-bold"><span><a [matTooltip]="'Back'" routerLink="/home"><i class="bi bi-arrow-left mr-3 text-dark"></i></a></span>Placement <span class="primary-title">Formatter</span>
+      </h4>
+      <p>Format sorted audience placements into <span class="primary-title">table</span> easy put into <span
+        class="primary-title">WordPress</span></p>
+    </div>
+    <div class="col-12 mb-7">
+      <p><strong>Note:</strong> See guide how to get placement <span class="text-primary fw-semibold cursor-pointer underline"
+                                                                     (click)="openGuide()">here</span>. Please make sure
+        the formation is correct otherwise you will get the <span class="text-warning">wrong placement format</span>.</p>
+      <p class="card-title">Placements format example</p>
+      <div class="p-3 bg-slate-100 rounded-md">
+        <code>Placement Name</code><br/>
+        <code>551464456440256_587111856146249</code><br/>
+        <code>Placement Name</code><br/>
+        <code>551464456440256_587717856146249</code><br/>
+        <code>Placement Name</code><br/>
+        <code>551464456440256_586292282956753</code><br/>
+      </div>
+    </div>
+    <div class="col-12 mb-5">
+      <div class="form-floating">
+        <textarea [(ngModel)]="listPlacements" class="form-control" placeholder="Paste placement here" id="linkInputBox"
+                  style="height: 200px"></textarea>
+        <label for="linkInputBox">Paste placement here</label>
+      </div>
+    </div>
+    <div class="col-12 mb-10 justify-content-center flex">
+      <button mat-flat-button color="primary" [disabled]="!listPlacements" class="py-1 px-7 mr-2"
+              (click)="onFormatPlacement()">Start
+      </button>
+    </div>
+    <div class="col-12">
+      <table class="table table-striped w-full border border-purple-800">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry the Bird</td>
+          <td>Larry the Bird</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #getPlacementGuideDialog>
+  <h2 mat-dialog-title>Get placements with the <span class="primary-title">right</span> format</h2>
+  <mat-dialog-content>
+    <ul>
+      <li>Go to Facebook Creator Studio by clicking <span><a
+        href="https://business.facebook.com/creatorstudio?tab=monetization_instant_article">here</a></span></li>
+      <li>Select your eligible Instant Articles page</li>
+      <li>Click on Placement ID section</li>
+      <ng-container>
+        <img src="https://github.com/StevRoger/grace-walker/blob/main/src/assets/png/1st-step.png?raw=true"
+             class="image-guide mb-3 rounded-md" alt="">
+      </ng-container>
+      <li>Copy all placement IDs and names</li>
+      <ng-container>
+        <img src="https://github.com/StevRoger/grace-walker/blob/main/src/assets/png/2nd-step.png?raw=true"
+             class="image-guide mb-3 rounded-md" alt="">
+      </ng-container>
+      <li>Done! Close dialog and paste the placement you just copied into input box.</li>
+    </ul>
+    <p class="fw-normal">If you still not clear, feel free to ask for help <a href="https://t.me/phalla404"
+                                                                              target="_blank"
+                                                                              class="primary-title">here</a></p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+  </mat-dialog-actions>
+</ng-template>
