@@ -1,9 +1,22 @@
 <div class="container my-20">
   <div class="row">
     <div class="col-12">
-      <h4 class="fw-bold">Welcome <span class="primary-title">{{(user && user.name) ? user.name : 'Unknown'}}</span></h4>
+      <h4 class="fw-bold">Welcome <span class="primary-title">{{(user && user.name) ? user.name : 'Unknown'}}</span>
+      </h4>
       <p>Select app below to use.</p>
     </div>
-    <div class="col-12 col-md-4"></div>
+    <div class="col-12">
+      <div class="row g-2">
+        <div class="col-12 col-md-4" *ngFor="let app of apps">
+          <div class="card group border-b-blue-100 hover:border-purple-800 cursor-pointer" [routerLink]="['/',app.link]">
+            <div class="card-body text-center">
+              <h1><span class="material-icons text-4xl group-hover:text-purple-800">{{app.icon}}</span></h1>
+              <h6 class="card-title fw-semibold group-hover:text-purple-800">{{app.title}}</h6>
+              <p class="card-text">{{app.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

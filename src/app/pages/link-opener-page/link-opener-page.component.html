@@ -1,0 +1,30 @@
+<div class="container my-20">
+  <div class="row">
+    <div class="col-12 mb-5">
+      <h4 class="fw-bold">Link <span class="text-purple-800">Opener</span></h4>
+      <p class="mb-0">Paste link below to open all links at once!</p>
+    </div>
+    <div class="col-12 mb-7">
+      <p><strong>Declaimer:</strong> This is made for open Facebook group only.</p>
+      <p class="card-title">Example</p>
+      <div class="p-3 bg-slate-100 rounded-md">
+        <code>https://www.facebook.com/groups/889512584455616</code><br/>
+        <code>https://www.facebook.com/groups/zaitakuworkers</code><br/>
+        <small>Or</small><br/>
+        <code>889512584455616</code><br/>
+        <code>cookingfc</code><br/>
+      </div>
+    </div>
+    <div class="col-12 mb-5">
+      <div class="form-floating">
+        <textarea [(ngModel)]="listGroupIds" class="form-control" placeholder="Group link or group id here" id="linkInputBox"
+                  style="height: 200px"></textarea>
+        <label for="linkInputBox">Paste your group link or group id here</label>
+      </div>
+    </div>
+    <div class="col-12 justify-content-center flex">
+      <button mat-flat-button class="py-1 px-7 bg-purple-500 mr-2 text-white" (click)="openLinks()">Open Links
+      </button>
+    </div>
+  </div>
+</div>
