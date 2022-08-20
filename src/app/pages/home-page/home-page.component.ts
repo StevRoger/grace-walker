@@ -44,8 +44,12 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     // @ts-ignore
-    this.user = JSON.parse(localStorage.getItem('USER'));
-    console.log('Welcome user =>', this.user);
+    this.user = JSON.parse(localStorage.getItem('FACEBOOK_USER'));
+    if (!this.user){
+      // @ts-ignore
+      this.user = JSON.parse(localStorage.getItem('GOOGLE_USER'));
+    }
+    // console.log('Welcome user =>', this.user);
   }
 
 }

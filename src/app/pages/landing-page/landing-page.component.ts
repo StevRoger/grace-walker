@@ -54,6 +54,7 @@ export class LandingPageComponent implements OnInit {
   signInWithFB(): void {
     this._authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((user) => {
       localStorage.setItem('FACEBOOK_USER', JSON.stringify(user));
+      localStorage.removeItem('GOOGLE_USER');
       this._router.navigateByUrl('home').then();
     });
   }
@@ -61,6 +62,7 @@ export class LandingPageComponent implements OnInit {
   signInWithGoogle(): void {
     this._authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((user) => {
       localStorage.setItem('GOOGLE_USER', JSON.stringify(user));
+      localStorage.removeItem('FACEBOOK_USER');
       this._router.navigateByUrl('home').then();
     });
   }
