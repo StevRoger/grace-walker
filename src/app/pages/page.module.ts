@@ -13,6 +13,7 @@ import { GroupLinkModificationPageComponent } from './group-link-modification-pa
 import { PlacementFormatterPageComponent } from './placement-formatter-page/placement-formatter-page.component';
 import { PageComponent } from './page.component';
 import {FormsModule} from "@angular/forms";
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {FormsModule} from "@angular/forms";
     RouterModule,
     PageRoutingModule,
     FormsModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: []

@@ -12,11 +12,11 @@
         the formation is correct otherwise you will get the <span class="text-warning">wrong placement format</span>.</p>
       <p class="card-title">Placements format example</p>
       <div class="p-3 bg-slate-100 rounded-md">
-        <code>Placement Name</code><br/>
+        <code>Placement Name 1</code><br/>
         <code>551464456440256_587111856146249</code><br/>
-        <code>Placement Name</code><br/>
+        <code>Placement Name 2</code><br/>
         <code>551464456440256_587717856146249</code><br/>
-        <code>Placement Name</code><br/>
+        <code>Placement Name 3</code><br/>
         <code>551464456440256_586292282956753</code><br/>
       </div>
     </div>
@@ -29,34 +29,42 @@
     </div>
     <div class="col-12 mb-10 justify-content-center flex">
       <button mat-flat-button color="primary" [disabled]="!listPlacements" class="py-1 px-7 mr-2"
-              (click)="onFormatPlacement()">Start
+              (click)="onFormatPlacement()">Format
       </button>
+      <button mat-flat-button *ngIf="listPlacements" class="py-1 px-7 mr-2" (click)="listPlacements = ''">Clear</button>
     </div>
     <div class="col-12">
+      <p>Click on item to copy the value</p>
       <table class="table table-striped w-full border border-purple-800">
         <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
+          <th scope="col">Placement ID</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry the Bird</td>
-          <td>Larry the Bird</td>
-        </tr>
+        <ng-container *ngIf="listFormattedPlacements.length, else noListValue">
+          <tr *ngFor="let placement of listFormattedPlacements, let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.name ?? '')">
+              {{placement.name ?? ''}}
+            </td>
+            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.email ?? '')">
+              {{placement.email ?? ''}}
+            </td>
+            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.placementId ?? '')">
+              {{placement.placementId ?? ''}}</td>
+          </tr>
+        </ng-container>
+        <ng-template #noListValue>
+          <tr>
+            <th colspan="4" class="text-center fw-normal">
+              No placement item available!
+            </th>
+          </tr>
+        </ng-template>
         </tbody>
       </table>
     </div>
