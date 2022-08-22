@@ -14,6 +14,7 @@ import { PlacementFormatterPageComponent } from './placement-formatter-page/plac
 import { PageComponent } from './page.component';
 import {FormsModule} from "@angular/forms";
 import {ClipboardModule} from "@angular/cdk/clipboard";
+import {MatRippleModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -23,18 +24,19 @@ import {ClipboardModule} from "@angular/cdk/clipboard";
     PlacementFormatterPageComponent,
     PageComponent,
   ],
-  imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    CommonModule,
-    RouterModule,
-    PageRoutingModule,
-    FormsModule,
-    ClipboardModule,
-  ],
+    imports: [
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        CommonModule,
+        RouterModule,
+        PageRoutingModule,
+        FormsModule,
+        ClipboardModule,
+        MatRippleModule,
+    ],
   providers: [],
   bootstrap: []
 })

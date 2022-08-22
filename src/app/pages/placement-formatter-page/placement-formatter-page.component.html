@@ -34,7 +34,10 @@
       <button mat-flat-button *ngIf="listPlacements" class="py-1 px-7 mr-2" (click)="listPlacements = ''">Clear</button>
     </div>
     <div class="col-12">
-      <p>Click on item to copy the value</p>
+      <div class="flex justify-content-between">
+        <p>Click on item to copy the value</p>
+        <a class="text-end" href="https://whos.amung.us/getstarted/#choose" target="_blank">Get Amung Us</a>
+      </div>
       <table class="table table-striped w-full border border-purple-800">
         <thead>
         <tr>
@@ -48,13 +51,13 @@
         <ng-container *ngIf="listFormattedPlacements.length, else noListValue">
           <tr *ngFor="let placement of listFormattedPlacements, let i = index">
             <th scope="row">{{i+1}}</th>
-            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.name ?? '')">
+            <td matRipple class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.name ?? '')">
               {{placement.name ?? ''}}
             </td>
-            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.email ?? '')">
+            <td matRipple class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.email ?? '')">
               {{placement.email ?? ''}}
             </td>
-            <td class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.placementId ?? '')">
+            <td matRipple class="hover:bg-indigo-100 cursor-pointer" (click)="onCopyClipboard(placement.placementId ?? '')">
               {{placement.placementId ?? ''}}</td>
           </tr>
         </ng-container>

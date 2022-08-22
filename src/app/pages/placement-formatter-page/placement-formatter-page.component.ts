@@ -35,6 +35,7 @@ export class PlacementFormatterPageComponent implements OnInit {
     const regex = /[a-zA-Z]+/g;
     const regexFormat = /\s/g;
     formattedPlacementArray.forEach((value: string, index: number) => {
+      // console.log('value', value);
       const regexp: string = value.replace(regex, '');
       if (regexp !== value) {
         obj.name = value;
@@ -43,19 +44,28 @@ export class PlacementFormatterPageComponent implements OnInit {
       }
       if (obj.name && obj.placementId) {
         obj.email = `${(obj.name.toLowerCase()).replace(regexFormat, '.')}@gmail.com`;
-
-        /** Find if placement has duplicate name, then add string to make it unique */
-        const foundDuplicate = this.listFormattedPlacements.find(item => item.name === value);
-        console.log('foundDuplicate', foundDuplicate);
-        // if (foundDuplicate) {
-        //   obj.name = `${obj.name}${index}`;
-        //   obj.email = `${(obj.name.toLowerCase()).replace(regexFormat, '.')}${index}@gmail.com`;
-        // }
         this.listFormattedPlacements.push(obj);
         obj = {};
       }
+
+      // const foundDuplicate = this.listFormattedPlacements.findIndex((item) =>{
+      //   return (item.name === obj.name);
+      // });
+
+      // console.log('foundDuplicate', foundDuplicate);
+      // if (foundDuplicate >= 0) {
+      //   this.listFormattedPlacements[foundDuplicate].email = `${foundDuplicate}${this.listFormattedPlacements[foundDuplicate].email}`;
+      // }
+      // console.log('duplicate index', foundDuplicate);
+
+      // const newArray: any = this.listFormattedPlacements.reduce((previousValue, currentValue, currentIndex) => {
+      //   console.log('previousValue', previousValue);
+      //   console.log('currentValue', currentValue);
+      //   console.log('currentIndex', currentIndex);
+      // });
+      // console.log('newArray', newArray);
     });
-    console.log('listFormattedPlacements', this.listFormattedPlacements);
+    // console.log('listFormattedPlacements', this.listFormattedPlacements);
   }
 
   onCopyClipboard(value: string): void {
