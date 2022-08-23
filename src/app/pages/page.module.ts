@@ -15,6 +15,7 @@ import { PageComponent } from './page.component';
 import {FormsModule} from "@angular/forms";
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import {MatRippleModule} from "@angular/material/core";
+import { AudienceNetworkReportReaderComponent } from './audience-network-report-reader/audience-network-report-reader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {MatRippleModule} from "@angular/material/core";
     GroupLinkModificationPageComponent,
     PlacementFormatterPageComponent,
     PageComponent,
+    AudienceNetworkReportReaderComponent,
   ],
     imports: [
         MatButtonModule,

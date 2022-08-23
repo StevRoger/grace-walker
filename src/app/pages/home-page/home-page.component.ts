@@ -14,19 +14,25 @@ export const applications: Application [] = [
     title: 'Link Opener',
     link: 'link-opener',
     icon: 'launch',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.',
+    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
   },
   {
     title: 'Group Link Modification',
     link: 'group-link-modification',
     icon: 'format_list_bulleted_add',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.',
+    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
   },
   {
     title: 'Placements Formatter',
     link: 'placement-formatter',
     icon: 'recent_actors',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document.',
+    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
+  },
+  {
+    title: 'Audience Network Report Reader',
+    link: 'audience-network-report-reader',
+    icon: 'format_list_numbered_rtl',
+    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
   },
 ];
 

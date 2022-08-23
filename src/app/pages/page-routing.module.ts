@@ -5,6 +5,9 @@ import {
   GroupLinkModificationPageComponent
 } from "./group-link-modification-page/group-link-modification-page.component";
 import {PlacementFormatterPageComponent} from "./placement-formatter-page/placement-formatter-page.component";
+import {
+  AudienceNetworkReportReaderComponent
+} from "./audience-network-report-reader/audience-network-report-reader.component";
 
 const routes: Routes = [
   {
@@ -15,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'placement-formatter', component: PlacementFormatterPageComponent
+  },
+  {
+    path: 'audience-network-report-reader', component: AudienceNetworkReportReaderComponent
   },
 ];
 
