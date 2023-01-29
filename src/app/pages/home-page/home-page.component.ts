@@ -34,6 +34,12 @@ export const applications: Application [] = [
     icon: 'format_list_numbered_rtl',
     description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
   },
+  {
+    title: 'Link Duplicate Remover',
+    link: 'link-duplicate-remover',
+    icon: 'remove_done',
+    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to.',
+  },
 ];
 
 @Component({

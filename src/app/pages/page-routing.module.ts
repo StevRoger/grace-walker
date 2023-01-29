@@ -8,6 +8,7 @@ import {PlacementFormatterPageComponent} from "./placement-formatter-page/placem
 import {
   AudienceNetworkReportReaderComponent
 } from "./audience-network-report-reader/audience-network-report-reader.component";
+import {LinkDuplicateRemoverPageComponent} from "./link-duplicate-remover-page/link-duplicate-remover-page.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'audience-network-report-reader', component: AudienceNetworkReportReaderComponent
+  },
+  {
+    path: 'link-duplicate-remover', component: LinkDuplicateRemoverPageComponent
   },
 ];
 

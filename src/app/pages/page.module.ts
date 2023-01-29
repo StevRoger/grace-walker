@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import {MatRippleModule} from "@angular/material/core";
 import { AudienceNetworkReportReaderComponent } from './audience-network-report-reader/audience-network-report-reader.component';
+import { LinkDuplicateRemoverPageComponent } from './link-duplicate-remover-page/link-duplicate-remover-page.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AudienceNetworkReportReaderComponent } from './audience-network-report-
     PlacementFormatterPageComponent,
     PageComponent,
     AudienceNetworkReportReaderComponent,
+    LinkDuplicateRemoverPageComponent,
   ],
     imports: [
         MatButtonModule,

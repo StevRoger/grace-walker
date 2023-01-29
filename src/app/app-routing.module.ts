@@ -6,10 +6,7 @@ import {PageComponent} from "./pages/page.component";
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'welcome', pathMatch: 'full'
-  },
-  {
-    path: 'welcome', component: LandingPageComponent
+    path: '', component: LandingPageComponent
   },
   {
     path: 'home', component: HomePageComponent

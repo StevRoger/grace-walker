@@ -65,7 +65,7 @@ export class PlacementFormatterPageComponent implements OnInit {
       // });
       // console.log('newArray', newArray);
     });
-    // console.log('listFormattedPlacements', this.listFormattedPlacements);
+    this.listFormattedPlacements.sort((a, b) => a.name.localeCompare(b.name));
   }
 
   onCopyClipboard(value: string): void {

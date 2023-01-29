@@ -1,0 +1,30 @@
+<div class="container my-20">
+  <div class="row">
+    <div class="col-12 mb-5">
+      <h4 class="fw-bold"><span><a [matTooltip]="'Back'" routerLink="/home"><i class="bi bi-arrow-left mr-3 text-dark"></i></a></span>Link Duplicate <span class="text-purple-800">Remover</span></h4>
+      <p class="mb-0">Remove all the duplicated links with <span class="text-purple-800">one</span> click!</p>
+    </div>
+    <div class="col-12 mb-7">
+      <p class="card-title">Links format example</p>
+      <div class="p-3 bg-slate-100 rounded-md">
+        <code>https://www.instagram.com/reel/CnCnBcTBdq0</code><br/>
+        <code>https://www.instagram.com/reel/CnCnBcTBdq0</code><br/>
+        <code>https://www.instagram.com/reel/CnCnBcTBdq0</code><br/>
+        <code>https://www.instagram.com/reel/CnCnBcTBdq0</code><br/>
+      </div>
+    </div>
+    <div class="col-12 mb-5">
+      <div class="form-floating">
+        <textarea [(ngModel)]="listLinks" class="form-control" placeholder="Paste placement here" id="linkInputBox"
+                  style="height: 200px"></textarea>
+        <label for="linkInputBox">Paste links here</label>
+      </div>
+    </div>
+    <div class="col-12 mb-10 justify-content-center flex">
+      <button mat-flat-button color="primary" [disabled]="!listLinks" class="py-1 px-7 mr-2"
+              (click)="onFormatLink()">Get Unique Links
+      </button>
+      <button mat-flat-button *ngIf="listLinks" class="py-1 px-7 mr-2" (click)="listLinks = ''">Clear</button>
+    </div>
+  </div>
+</div>
