@@ -21,6 +21,6 @@ export class LinkDuplicateRemoverPageComponent implements OnInit {
     const formattedPlacementArray: string [] = this.listLinks.split('\n');
     const result: string [] = [...new Set(formattedPlacementArray)];
     this._Clipboard.copy(result.join("\r\n"));
-    this._MatSnackBar.open('Links have been formatted and copied in to your clipboard!', 'Ok', {duration: 4000});
+    this._MatSnackBar.open(`${result.length} unique link${result.length > 1 ? 's have' : ' has'} been copied into your clipboard!`, 'Ok', {duration: 40000});
   }
 }

@@ -17,6 +17,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatTooltipModule,
     MatButtonModule,
     MatIconModule,
+    FontAwesomeModule,
   ],
   /** Secret app: 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 */
   providers: [

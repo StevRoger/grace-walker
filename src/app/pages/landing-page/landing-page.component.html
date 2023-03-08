@@ -1,9 +1,4 @@
 <section class="main-landing relative">
-  <div class="site-credit-btn">
-    <button mat-icon-button aria-label="Information" matTooltip="About the website" (click)="openCredit()">
-      <mat-icon>info_outline</mat-icon>
-    </button>
-  </div>
   <div class="container min-h-screen">
     <div class="row min-h-screen">
       <div class="row min-h-screen">
@@ -11,7 +6,7 @@
           <div class="my-auto">
             <h1 class="fw-bold display-4 mb-0">Welcome</h1>
             <h1 class="fw-bold display-5">To&nbsp;<span class="primary-title">Meta</span>&nbsp;platform's tools</h1>
-            <p class="font-normal mb-7">We are providing variety of useful MMO's tools to help Khmer people reach their
+            <p class="font-normal mb-7">We are providing variety of useful free MMO's tools to help <span class="font-semibold">Khmer</span> people reach their
               best potential in MMO fields.</p>
             <div class="d-flex">
               <button mat-flat-button color="primary" class="py-1 px-7 mr-2" [routerLink]="'/home'">Get Started
@@ -26,17 +21,4 @@
     </div>
   </div>
 </section>
-
-
-<ng-template #siteCreditDialog>
-  <h2 mat-dialog-title>Site Credit</h2>
-  <mat-dialog-content>
-    <p class="mb-0">Thank you for reaching out.</p>
-    <p class="fw-normal">Made with love by <a href="https://www.facebook.com/grace.themastermind" target="_blank" class="primary-title">Grace Wanderwaal</a></p>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
-  </mat-dialog-actions>
-</ng-template>
-
 

@@ -17,3 +17,13 @@ body {
 .primary-title {
   color: #6759ae;
 }
+.mat-snack-bar-container {
+  background-color: #fff;
+  .mat-simple-snack-bar-content {
+    color: #3f51b5;
+    font-weight: 500;
+  }
+  .mat-button-wrapper {
+    color: #3f51b5;
+  }
+}

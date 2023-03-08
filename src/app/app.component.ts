@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import {MatDialog} from "@angular/material/dialog";
+import {CreditDialogComponent} from "./pages/dialog/credit-dialog/credit-dialog.component";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -25,9 +27,14 @@ const firebaseConfig = {
 export class AppComponent {
   title = 'grace-walker';
 
-  constructor() {
+  constructor(
+    public dialog: MatDialog,
+  ) {
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+  }
+  openCredit(): void {
+    this.dialog.open(CreditDialogComponent, {autoFocus: false});
   }
 }

@@ -17,6 +17,8 @@ import {ClipboardModule} from "@angular/cdk/clipboard";
 import {MatRippleModule} from "@angular/material/core";
 import { AudienceNetworkReportReaderComponent } from './audience-network-report-reader/audience-network-report-reader.component';
 import { LinkDuplicateRemoverPageComponent } from './link-duplicate-remover-page/link-duplicate-remover-page.component';
+import { CreditDialogComponent } from './dialog/credit-dialog/credit-dialog.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { LinkDuplicateRemoverPageComponent } from './link-duplicate-remover-page
     PageComponent,
     AudienceNetworkReportReaderComponent,
     LinkDuplicateRemoverPageComponent,
+    CreditDialogComponent,
   ],
     imports: [
         MatButtonModule,
@@ -40,6 +43,7 @@ import { LinkDuplicateRemoverPageComponent } from './link-duplicate-remover-page
         FormsModule,
         ClipboardModule,
         MatRippleModule,
+        FontAwesomeModule
     ],
   providers: [],
   bootstrap: []

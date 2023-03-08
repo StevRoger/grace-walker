@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
   AmazonLoginProvider,
   FacebookLoginProvider,
@@ -6,9 +6,7 @@ import {
   SocialAuthService,
   SocialUser, VKLoginProvider
 } from "angularx-social-login";
-import {MatDialog} from "@angular/material/dialog";
-import {Router, RouterLink} from "@angular/router";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-landing-page',
@@ -17,16 +15,12 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class LandingPageComponent implements OnInit {
 
-  // @ts-ignore
-  @ViewChild('siteCreditDialog') siteCreditDialog: TemplateRef<any>;
   public user: SocialUser | any;
   public GoogleLoginProvider = GoogleLoginProvider;
 
   constructor(
     private readonly _authService: SocialAuthService,
-    public dialog: MatDialog,
     private _router: Router,
-    private _matSnackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -45,10 +39,6 @@ export class LandingPageComponent implements OnInit {
     //   console.log(error);
     //   this._matSnackBar.open('Login failed! Please try again!');
     // });
-  }
-
-  openCredit(): void {
-    this.dialog.open(this.siteCreditDialog, {autoFocus: false});
   }
 
   signInWithFB(): void {
